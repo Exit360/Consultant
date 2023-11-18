@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fabrix360 - Services Offer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Replace the image URL with your company logo -->
+        <img src="https://dl.dropboxusercontent.com/scl/fi/1pjkqu2syzhmkj551v32u/logo360.png?rlkey=fllf4y3hootfw63hypdk27ujs&dl=0" alt="Company Logo" style="max-width: 100%;">
+        <h1>Fabrix Threesixy FZC, ETFE and fabric tensile structures</h1>
+    </header>
+
+    <section>
+        <h2>Welcome to Our Services</h2>
+        <p>We are dedicated to providing high-quality consultancy services tailored to meet your needs.</p>
+        <p>Our basic service fee is AED 5,000 that include non limited online support for all your quiries for one project starting from payment until the project is out for tender.</p>
+
+        <h3>Additional Options:</h3>
+        <form id="optionsForm">
+            <label>
+                <input type="checkbox" name="option1" id="option1">
+                Provide Consultant specifications and BOQ (+ AED 5,000)
+            </label>
+            <label>
+                <input type="checkbox" name="option2" id="option2">
+                Provide Prelimenary schematic report  (+ AED 5,000)
+            </label>
+        </form>
+
+        <h3>Total Fees:</h3>
+        <p id="result"></p>
+        <button onclick="calculateFees()">Calculate</button>
+    </section>
+
+    <footer>
+        <p>Thank you for considering our services. Please feel free to <a href="mailto:management@fabrix360.com">contact us</a> for more information.</p>
+    </footer>
+
+    <script>
+        function calculateFees() {
+            var basicFees = 5000;
+            var totalFees = basicFees;
+
+            if (document.getElementById('option1').checked) {
+                totalFees += 5000;
+            }
+
+            if (document.getElementById('option2').checked) {
+                totalFees += 5000;
+            }
+
+            document.getElementById('result').innerText = 'Total Fees: AED ' + totalFees.toFixed(2);
+        }
+    </script>
+</body>
+</html>
