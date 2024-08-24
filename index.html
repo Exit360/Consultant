@@ -63,17 +63,17 @@
     <section>
         <h2>Welcome to Our Services</h2>
         <p>We are committed to delivering high-quality consultancy services customized to your needs.</p>
-        <p>Our standard service fee is USD 800, which includes a comprehensive initial review of your project and the provision of detailed recommendations in the form of an initial report.</p>
+        <p>Our standard service fee is USD 800 ,which includes a comprehensive initial review of your project and the provision of detailed recommendations in the form of an initial report.</p>
 
         <h3>Additional Options:</h3>
         <form id="optionsForm">
             <label>
                 <input type="checkbox" name="option1" id="option1">
-                Provide Consultant specifications and BOQ 
+                Provide Consultant specifications and provisional BOQ. 
             </label>
             <label>
                 <input type="checkbox" name="option2" id="option2">
-                Provide Conceptual Design report  
+                Provide Conceptual Design report.  
             </label>
         </form>
 
@@ -88,18 +88,18 @@
 
     <script>
         function calculateFees() {
-            var basicFees = 5000;
+            var basicFees = 800;
             var totalFees = basicFees;
 
             if (document.getElementById('option1').checked) {
-                totalFees += 5000;
+                totalFees += 1500;
             }
 
             if (document.getElementById('option2').checked) {
-                totalFees += 5000;
+                totalFees += 1200;
             }
 
-            document.getElementById('result').innerText = 'Total Fees: AED ' + totalFees.toFixed(2);
+            document.getElementById('result').innerText = 'Total Fees: USD ' + totalFees.toFixed(2);
         }
     </script>
 </body>
