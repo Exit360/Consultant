@@ -9,7 +9,9 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
+            padding: 1rem;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
         }
 
         header {
@@ -25,6 +27,7 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         footer {
@@ -51,6 +54,20 @@
         button:hover {
             background-color: #45a049;
         }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -69,21 +86,22 @@
         <form id="optionsForm">
             <label>
                 <input type="checkbox" name="option1" id="option1">
-                Provide Consultant specifications and provisional BOQ. 
+                Provide Consultant specifications and provisional BOQ.
             </label>
             <label>
                 <input type="checkbox" name="option2" id="option2">
-                Provide Conceptual Design report.  
+                Provide Conceptual Design report.
             </label>
         </form>
 
         <h3>Total Fees:</h3>
-        <p id="result"></p>
-        <button onclick="calculateFees()">Calculate</button>
+        <p id="result">Total Fees: USD 800.00</p>
+        <button onclick="calculateFees()">Calculate Total Fees</button>
     </section>
 
     <footer>
-        <p>Thank you for considering our services. We invite you to contact us to discover how we can provide you with exceptional and tailored solutions. <a href="mailto:management@fabrix360.com">Contact us</a> </p>
+        <p>Thank you for considering our services. We're excited to help you with your project!</p>
+        <p>For any questions or to get started, please reach out to us at <a href="mailto:management@fabrix360.com">management@fabrix360.com</a>.</p>
     </footer>
 
     <script>
@@ -101,6 +119,14 @@
 
             document.getElementById('result').innerText = 'Total Fees: USD ' + totalFees.toFixed(2);
         }
+
+        // Set initial fees on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if any options are selected, if not, then set the default value.
+            if (!document.getElementById('option1').checked && !document.getElementById('option2').checked) {
+                document.getElementById('result').innerText = 'Total Fees: USD 800.00';
+            }
+        });
     </script>
 </body>
 </html>
